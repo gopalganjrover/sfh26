@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>1st Orientation Course on Safe from Harm 2026 — Bangladesh Scouts, Gopalganj District Rover</title>
+<style>
+  :root{--purple:#622599;--dark:#43176A;--blue:#127FC5;--violet-lt:#C8B2E0;
+        --paper:#FDFCFF;--ink:#241B2E;--role:#4A4157}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);line-height:1.7;
+       font-family:"Baskerville","Libre Baskerville",Georgia,"Times New Roman",serif}
+  header{background:var(--purple);color:#fff;padding:24px 18px;text-align:center;
+         border-bottom:4px solid var(--blue)}
+  header .org{font-size:.9rem;letter-spacing:.22em;text-transform:uppercase}
+  header h1{margin:.5rem 0 .3rem;font-size:1.3rem;line-height:1.45}
+  header h1 sup{font-size:.6em;vertical-align:super}
+  header .meta{font-size:.92rem;color:var(--violet-lt)}
+  main{max-width:880px;margin:0 auto;padding:20px 16px 56px}
+  section{margin:28px 0}
+  h2{font-size:1.05rem;color:var(--purple);letter-spacing:.06em;text-transform:uppercase;
+     border-left:5px solid var(--blue);padding:4px 0 4px 12px;margin:0 0 12px}
+  table{width:100%;border-collapse:collapse;font-size:.95rem;background:#fff}
+  th,td{border:1px solid #e3dced;padding:9px 12px;text-align:left;vertical-align:top}
+  th{background:#F4EFFA;color:var(--dark);white-space:nowrap}
+  thead th{background:var(--purple);color:#fff}
+  .card{background:#fff;border:1px solid var(--violet-lt);border-top:4px solid var(--purple);
+        border-radius:6px;padding:18px 20px}
+  .card h3{margin:0 0 10px;color:var(--dark);font-size:1.3rem}
+  .pill{display:inline-block;background:#F0E8FA;color:var(--purple);border-radius:999px;
+        padding:3px 13px;font-size:.82rem;margin-right:7px}
+  .pending{color:var(--role);font-style:italic}
+  .ok{color:var(--purple);margin:14px 0 0}
+  footer{text-align:center;font-size:.85rem;color:var(--role);padding:18px;
+         border-top:1px solid var(--violet-lt);letter-spacing:.08em}
+  a{color:var(--purple)}
+  @media(max-width:520px){th,td{padding:7px 9px;font-size:.9rem}}
+</style>
+</head>
+<body>
+<header>
+  <div class="org">Bangladesh Scouts</div>
+  <div class="org">Gopalganj District Rover</div>
+  <h1>1<sup>st</sup> Orientation Course on Safe from Harm 2026</h1>
+  <div class="meta">Friday, 06 November 2026 · online, Zoom · 8:30 pm</div>
+</header>
+
+<main>
+  <section id="participant">
+    <h2>Participant Details</h2>
+    <div class="card" id="pcard"><span class="pending">Scan the QR code printed on a
+      certificate to see that participant's details here.</span></div>
+  </section>
+
+  <section>
+    <h2>Programme Information</h2>
+    <table id="prog"></table>
+  </section>
+
+  <section>
+    <h2>Course Staff</h2>
+    <table id="staff"></table>
+  </section>
+
+  <section>
+    <h2>Programme Schedule</h2>
+    <table id="sched"></table>
+  </section>
+
+  <section>
+    <h2>Contact and Verification</h2>
+    <div class="card">
+      To verify a certificate, contact the District Secretary, Bangladesh Scouts,
+      Gopalganj District Rover — mobile 01717314690,
+      e-mail <a href="mailto:gopalganjdistrictrover@gmail.com">gopalganjdistrictrover@gmail.com</a>.
+    </div>
+  </section>
+</main>
+
+<footer>Bangladesh Scouts, Gopalganj District Rover · Safe from Harm — Every Young Person's Right</footer>
+
+<script>
+// ---------------------------------------------------------------------
+// All content is held in the four blocks below. Entries marked "………" are
+// to be filled in when the district office supplies them.
+// ---------------------------------------------------------------------
+const PROGRAMME = [
+  ["Course", "1st Orientation Course on Safe from Harm 2026"],
+  ["Organised by", "Bangladesh Scouts, Gopalganj District Rover"],
+  ["Mode", "Online, through the Zoom app"],
+  ["Date", "Friday, 06 November 2026"],
+  ["Time", "8:30 pm (revised from 2:30 pm); participants join the Zoom room by 8:15 pm"],
+  ["Participants", "Rover Scouts, Girl-in-Rovers and Rover Scout Leaders of the district"],
+  ["Contents", "Child and youth protection, risk identification, the safe delivery of programmes, and the complaint and reporting procedure under the Safe from Harm policy of the World Organization of the Scout Movement"],
+  ["Course fee", "Not applicable"],
+  ["Circular", "District Rover memo no. 636(40)/2026, dated 18 October 2026; time revised by memo no. 647(40)/2026, dated 25 October 2026"],
+  ["Registration", "Through the district online registration form; deadline 02 November 2026"]
+];
+
+const STAFF = [
+  ["Course Leader", "Professor Masud Ahmed, ALT", "District Commissioner, Gopalganj District Rover"],
+  ["Programme Coordinator", "Reday Kumar Sheel", "Assistant Commissioner (Special Events), Gopalganj District Rover"],
+  ["Member", "Md. Zubair Al Mahmud, ALT", "District Secretary, Gopalganj District Rover"],
+  ["………", "………", "Session leaders to be added"]
+];
+
+const SCHEDULE = [
+  ["8:15 pm – 8:30 pm", "Joining the Zoom room and renaming"],
+  ["………", "Inaugural session"],
+  ["………", "Session 1 — Safe from Harm: the policy and why it exists"],
+  ["………", "Session 2 — Recognising and identifying risk"],
+  ["………", "Session 3 — Delivering programmes safely"],
+  ["………", "Session 4 — Receiving complaints and reporting"],
+  ["………", "Evaluation, question and answer, closing"]
+];
+
+// Certificate number -> participant (filled automatically from the roster)
+const PARTICIPANTS = {
+  "001": {"name":"Md. Rakib Hasan",
+          "unit":"Gopalganj Government College Rover Scout Group",
+          "post":"Rover", "bsid":"………", "date":"06 November 2026"}
+};
+
+function rows(tbl, data, head){
+  const t = document.getElementById(tbl);
+  let h = head ? "<thead><tr>" + head.map(c => "<th>"+c+"</th>").join("") + "</tr></thead>" : "";
+  h += "<tbody>" + data.map(r =>
+        "<tr>" + r.map((c,i) => (i===0 && !head ? "<th>"+c+"</th>" : "<td>"+c+"</td>")).join("") +
+        "</tr>").join("") + "</tbody>";
+  t.innerHTML = h;
+}
+rows("prog", PROGRAMME);
+rows("staff", STAFF, ["Role", "Name", "Designation"]);
+rows("sched", SCHEDULE, ["Time", "Session"]);
+
+const cert = (location.hash.match(/C=([^&]+)/) || [])[1];
+if (cert) {
+  const p = PARTICIPANTS[decodeURIComponent(cert)];
+  const box = document.getElementById("pcard");
+  box.innerHTML = p
+    ? "<h3>" + p["name"] + "</h3>" +
+      "<div><span class='pill'>Certificate No. " + cert + "/SFH/2026</span>" +
+      "<span class='pill'>" + p["post"] + "</span></div>" +
+      "<table style='margin-top:14px'><tbody>" +
+      "<tr><th>Rover Scout Group</th><td>" + p["unit"] + "</td></tr>" +
+      "<tr><th>Bangladesh Scouts ID</th><td>" + p["bsid"] + "</td></tr>" +
+      "<tr><th>Date of participation</th><td>" + p["date"] + "</td></tr>" +
+      "<tr><th>Award</th><td>Certificate of Participation, 1st Orientation Course " +
+      "on Safe from Harm 2026</td></tr>" +
+      "</tbody></table>" +
+      "<p class='ok'>&#10004; This certificate is recorded with Bangladesh Scouts, " +
+      "Gopalganj District Rover.</p>"
+    : "<span class='pending'>Certificate No. " + cert + " was not found in the record. " +
+      "Please contact the district office for verification.</span>";
+}
+</script>
+</body>
+</html>
